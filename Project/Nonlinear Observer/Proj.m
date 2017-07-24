@@ -1,5 +1,7 @@
 function [b_stim_dot] = Proj(b_stim, beta)
 
+% M_b must be defined
+
 %Parameter Projection function [11]
 
     if (norm(b_stim) >= M_b) && (b_stim'*beta > 0)

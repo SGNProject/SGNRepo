@@ -1,4 +1,6 @@
-function [c_out] = c(b_stim)
+function c_out = c(b_stim)
+
+% who's M_b? and M_b_stim?
 
 % Funzione utilizzata nella Proj
 
@@ -8,6 +10,6 @@ function [c_out] = c(b_stim)
     else 
         c_out = 1;
     end
-    
+    c_out
 end
 
