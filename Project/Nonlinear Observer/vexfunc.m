@@ -4,13 +4,15 @@ function x = vexfunc(S)
 
 [r,c] = size(S);
 
+x_ = zeros(1,3);
+
 if (r == 3 && c == 3)
 
-        x(1) = S(3,2);
-        x(2) = S(1,3);
-        x(3) = S(2,1);
+        x_(1) = S(3,2);
+        x_(2) = S(1,3);
+        x_(3) = S(2,1);
 else
     disp('S is not a 3x3 matrix')
 end
 
-x = x';
+x = x_';

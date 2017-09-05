@@ -9,4 +9,4 @@ Skew(3,1) = -w(2);
 Skew(2,3) = -w(1);
 Skew(3,2) = w(1);
 
-Skew
+end

@@ -4,9 +4,12 @@ function [b_stim_dot] = Proj(b_stim, beta)
 
 %Parameter Projection function [11]
 
-    if (norm(b_stim) >= M_b) && (b_stim'*beta > 0)
+M_b_stim = beta;
+M_b = 1;  % Valore di prova. Da rivedere in seguito
+
+    if ((norm(b_stim) >= M_b) && (b_stim(1)*beta > 0) && (b_stim(2)*beta > 0) && (b_stim(3)*beta >0))
         
-        b_stim_dot = (eye(3) - (c(b_stim)*(b_stim*b_stim'))/norm(b_stim)^2)*beta;
+        b_stim_dot = (eye(3) - (c(b_stim,M_b,M_b_stim)*(b_stim*b_stim'))/norm(b_stim)^2)*beta;
         
     else 
         

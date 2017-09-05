@@ -1,0 +1,17 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="31,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T1U3">c_out</span> = c(<span class="var type1" id="S3T3U6">b_stim</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="31,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="31,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">% who's M_b? and M_b_stim?</span></span></span>
+<span class="srcline"><span class="lineno"><a href="31,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="31,5" id="srcline5"> 5</a></span><span class="line"><span class="comment">% Funzione utilizzata nella Proj</span></span></span>
+<span class="srcline"><span class="lineno"><a href="31,6" id="srcline6"> 6</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="31,7" id="srcline7"> 7</a></span><span class="line">    <span class="var type0" id="S4T0U9">val_comp</span> = (norm(<span class="message error" id="M5F43C"><span class="var type1" id="S3T3U16">b_stim</span>^<span class="mxinfo " id="T1:U4">2</span></span>) - M_b^2)/(M_b_stim^2 - M_b^2);</span></span>
+<span class="srcline"><span class="lineno"><a href="31,8" id="srcline8"> 8</a></span><span class="line">    <span class="keyword">if</span> <span class="var type0" id="S4T0U35"><span class="message error" id="M6F43C">val_comp</span></span> &gt; 1</span></span>
+<span class="srcline"><span class="lineno"><a href="31,9" id="srcline9"> 9</a></span><span class="line">        <span class="var type0" id="S2T0U39">c_out</span> = <span class="var type0" id="S4T0U40"><span class="message error" id="M7F43C">val_comp</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="31,10" id="srcline10">10</a></span><span class="line">    <span class="keyword">else</span> </span></span>
+<span class="srcline"><span class="lineno"><a href="31,11" id="srcline11">11</a></span><span class="line">        <span class="mxinfo " id="T1:U5"><span class="var type1" id="S2T1U44">c_out</span> = <span class="mxinfo " id="T1:U7">1</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="31,12" id="srcline12">12</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="31,13" id="srcline13">13</a></span><span class="line">    <span class="var type1" id="S2T1U47">c_out</span></span></span>
+<span class="srcline"><span class="lineno"><a href="31,14" id="srcline14">14</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="31,15" id="srcline15">15</a></span><span class="line"></span></span>
+</pre>
