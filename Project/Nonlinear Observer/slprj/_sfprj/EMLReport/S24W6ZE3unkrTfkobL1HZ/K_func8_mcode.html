@@ -1,0 +1,13 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="6,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T1U3">K</span> = K_func(<span class="var type1" id="S3T1U6">A</span>,<span class="var type1" id="S4T2U7">C</span>,<span class="var type1" id="S5T8U8">R</span>,<span class="var type1" id="S6T8U9">Q</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="6,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="6,3" id="srcline3"> 3</a></span><span class="line"><span class="mxinfo " id="T1:U6"><span class="var type1" id="S2T1U12">K</span> = <span class="mxinfo " id="T1:U8">zeros(<span class="mxinfo " id="T5:U9">10</span>,<span class="mxinfo " id="T5:U10">10</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="6,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="6,5" id="srcline5"> 5</a></span><span class="line">coder.extrinsic(<span class="string">'care'</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="6,6" id="srcline6"> 6</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="6,7" id="srcline7"> 7</a></span><span class="line">[<span class="var type0" id="S9T0U26">P</span>,<span class="var type0" id="S10T0U27">L</span>,<span class="var type0" id="S11T0U28">G</span>] = care(<span class="var type0" id="S3T0U31">A</span>,<span class="var type0" id="S4T0U33">C</span>',<span class="var type0" id="S6T0U34">Q</span>,<span class="var type0" id="S5T0U35">R</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="6,8" id="srcline8"> 8</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="6,9" id="srcline9"> 9</a></span><span class="line"><span class="var type0" id="S13T0U38">R_inv</span> = pinv(<span class="var type0" id="S5T0U41">R</span>); </span></span>
+<span class="srcline"><span class="lineno"><a href="6,10" id="srcline10">10</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="6,11" id="srcline11">11</a></span><span class="line"><span class="var type0" id="S2T0U44">K</span> = <span class="var type0" id="S9T0U47">P</span>*<span class="var type0" id="S4T0U49">C</span>'*<span class="var type0" id="S13T0U50">R_inv</span>;</span></span>
+</pre>
