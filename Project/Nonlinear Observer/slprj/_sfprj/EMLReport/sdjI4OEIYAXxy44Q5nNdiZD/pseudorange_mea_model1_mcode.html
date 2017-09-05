@@ -1,0 +1,18 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T1U3">y</span> = pseudorange_mea_model(<span class="var type1" id="S3T2U6">p_n</span>,<span class="var type1" id="S4T3U7">p_n_i</span>,<span class="var type1" id="S5T4U8">beta</span>,<span class="var type1" id="S6T1U9">epsilon</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line">  <span class="comment">%  row-vector</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line">  <span class="mxinfo " id="T1:U6"><span class="var type1" id="S2T1U12">y</span> = <span class="mxinfo " id="T1:U8">zeros(<span class="mxinfo " id="T4:U9">size(<span class="var type1" id="S4T3U17">p_n_i</span>,1)</span>,1)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line">  <span class="keyword">for</span> <span class="var type1" id="S9T4U22">i</span> = <span class="mxinfo " id="T1:U12"><span class="mxinfo " id="T4:U13">1</span>: <span class="mxinfo " id="T4:U14">size(<span class="var type1" id="S4T3U27">p_n_i</span>,1)</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line">      <span class="var type0" id="S10T0U31">rho</span> = norm(<span class="message error" id="M1F1C"><span class="var type1" id="S3T2U35">p_n</span>-<span class="mxinfo " id="T5:U17"><span class="var type1" id="S4T3U37">p_n_i</span>(<span class="var type1" id="S9T4U38">i</span>,<span class="mxinfo " id="T6:U20">:</span>)</span></span>);  <span class="comment">% eq. 7</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11">11</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12">12</a></span><span class="line">      <span class="var type0" id="S2T0U43">y</span>(<span class="var type0" id="S9T0U44">i</span>) = <span class="var type0" id="S10T0U47"><span class="message error" id="M2F1C">rho</span></span> + <span class="var type0" id="S5T0U48">beta</span> + <span class="var type0" id="S6T0U50">epsilon</span>(<span class="var type0" id="S9T0U51">i</span>); <span class="comment">% eq. 8 </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13">13</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14">14</a></span><span class="line">  <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,15" id="srcline15">15</a></span><span class="line">      </span></span>
+<span class="srcline"><span class="lineno"><a href="1,16" id="srcline16">16</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
