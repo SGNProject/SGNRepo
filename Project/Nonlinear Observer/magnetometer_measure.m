@@ -1,5 +1,5 @@
 %magnetometer.mat
 
-    magnetometer = [0,10^(-9), 0, 0]';
+    magnetometer = [0.5,1, 0.5]';
     
     save('magnetometer.mat', 'magnetometer');

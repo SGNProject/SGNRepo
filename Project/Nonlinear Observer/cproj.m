@@ -1,4 +1,4 @@
-function c_out = c(b_stim,M_b,M_b_stim)
+function c_out = cproj(b_stim,M_b,M_b_stim)
 
 % who's M_b? and M_b_stim?
 
