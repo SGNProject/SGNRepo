@@ -1,0 +1,35 @@
+<!-- saved from url=(0014)about:internet -->
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T1U3">v_n_dot</span>, <span class="var type1" id="S3T2U4">R_nb_dot</span>, <span class="var type1" id="S4T2U5">Skew</span>] = mechanisation(<span class="var type1" id="S5T1U8">w_ib</span>, <span class="var type1" id="S6T1U9">f_b</span>, <span class="var type1" id="S7T3U10">R_nb</span>, <span class="var type1" id="S8T3U11">t</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line"><span class="mxinfo " id="T1:U8"><span class="var type1" id="S9T1U14">g_n</span> = <span class="mxinfo " id="T1:U10"><span class="mxinfo " id="T4:U11">[<span class="mxinfo " id="T3:U12">0</span> <span class="mxinfo " id="T3:U13">0</span> <span class="mxinfo " id="T3:U14">9.81</span>]</span>'</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line"><span class="comment">% w_ib = size(3,1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line"><span class="keyword">if</span> <span class="mxinfo " id="T5:U15"><span class="var type1" id="S8T3U24">t</span> == <span class="mxinfo " id="T3:U17">0</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line">    <span class="mxinfo " id="T1:U18"><span class="var type1" id="S2T1U28">v_n_dot</span> = <span class="mxinfo " id="T1:U20">ones(<span class="mxinfo " id="T3:U21">3</span>,1)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11">11</a></span><span class="line">    <span class="mxinfo " id="T2:U22"><span class="var type1" id="S3T2U35">R_nb_dot</span> = <span class="mxinfo " id="T2:U24">eye(3)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12">12</a></span><span class="line">    <span class="mxinfo " id="T3:U25"><span class="var type1" id="S7T3U41"><span class="message error" id="M1F1C">R_nb</span></span></span> = <span class="mxinfo " id="T2:U26">eye(3)</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13">13</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14">14</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,15" id="srcline15">15</a></span><span class="line"><span class="comment">% mechanisation</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,16" id="srcline16">16</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,17" id="srcline17">17</a></span><span class="line"><span class="comment">% Skew = zeros(3,3);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,18" id="srcline18">18</a></span><span class="line"><span class="comment">% Skew(1,2) = -w_ib(3);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,19" id="srcline19">19</a></span><span class="line"><span class="comment">% Skew(2,1) = w_ib(3);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,20" id="srcline20">20</a></span><span class="line"><span class="comment">% Skew(1,3) = w_ib(2);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,21" id="srcline21">21</a></span><span class="line"><span class="comment">% Skew(3,1) = -w_ib(2);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,22" id="srcline22">22</a></span><span class="line"><span class="comment">% Skew(2,3) = -w_ib(1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,23" id="srcline23">23</a></span><span class="line"><span class="comment">% Skew(3,2) = w_ib(1);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,24" id="srcline24">24</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,25" id="srcline25">25</a></span><span class="line"><span class="mxinfo " id="T2:U27"><span class="var type1" id="S4T2U47">Skew</span> = <span class="mxinfo " id="T2:U29"><span class="fcn" id="F14N3:B49">skew</span>(<span class="var type1" id="S5T1U50">w_ib</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,26" id="srcline26">26</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,27" id="srcline27">27</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,28" id="srcline28">28</a></span><span class="line"><span class="comment">%p_dot = v_n;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,29" id="srcline29">29</a></span><span class="line"><span class="mxinfo " id="T1:U31"><span class="var type1" id="S2T1U53">v_n_dot</span> = <span class="mxinfo " id="T1:U33"><span class="mxinfo " id="T1:U34"><span class="var type1" id="S7T3U56">R_nb</span> * <span class="var type1" id="S6T1U57">f_b</span></span> + <span class="var type1" id="S9T1U58">g_n</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,30" id="srcline30">30</a></span><span class="line"><span class="mxinfo " id="T2:U38"><span class="var type1" id="S3T2U61">R_nb_dot</span> = <span class="mxinfo " id="T2:U40"><span class="var type1" id="S7T3U63">R_nb</span> * <span class="var type1" id="S4T2U64">Skew</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,31" id="srcline31">31</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,32" id="srcline32">32</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
