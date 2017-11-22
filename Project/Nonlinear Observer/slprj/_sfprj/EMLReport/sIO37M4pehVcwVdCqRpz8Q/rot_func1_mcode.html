@@ -1,0 +1,7 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1">1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T1U3">R_nb_stim_dot</span> = rot_func(<span class="var type1" id="S3T2U6">b_stim</span>,<span class="var type1" id="S4T3U7">w_ib</span>,<span class="var type1" id="S5T4U8">sigma</span>,<span class="var type1" id="S6T1U9">Kp</span>,<span class="var type1" id="S7T1U10">J</span>,<span class="var type1" id="S8T1U11">R_nb_stim</span>) </span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2">2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3">3</a></span><span class="line"><span class="var type0" id="S9T0U14">Skew</span> = skew(<span class="message error" id="M1F1C"><span class="var type1" id="S4T3U18">w_ib</span> - <span class="var type1" id="S3T2U19">b_stim</span></span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4">4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5">5</a></span><span class="line"><span class="var type0" id="S2T0U22">R_nb_stim_dot</span> = <span class="var type1" id="S8T1U25">R_nb_stim</span> * <span class="var type0" id="S9T0U26"><span class="message error" id="M2F1C">Skew</span></span> + <span class="var type0" id="S5T0U29">sigma</span> * <span class="var type0" id="S6T0U30">Kp</span> * <span class="var type0" id="S7T0U31">J</span>;</span></span>
+</pre>

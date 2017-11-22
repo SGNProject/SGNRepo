@@ -9,7 +9,7 @@ function [b_stim_dot] = Proj(b_stim, beta)
 M_b = 1;  % Valore di prova. Da rivedere in seguito
 M_b_stim = 2;
 
-    if ((norm(b_stim) >= M_b) && (b_stim' *beta > 0))
+    if ((norm(b_stim) >= M_b) && (b_stim'*beta > 0))
         
         b_stim_dot = (eye(3) - (cproj(b_stim,M_b,M_b_stim)*(b_stim*b_stim'))/norm(b_stim)^2)*beta;
         
