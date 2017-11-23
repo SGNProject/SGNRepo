@@ -16,14 +16,17 @@ A = zeros(10);
  
  P_ris = [];
  P = [];
- R = eye(4);
- Q = 10*eye(10);
+ R = 10^-3*eye(4);
+ %Q = diag([10^-3,10^-3,10^-3,10^-5,10^-8,10^-8,10^-8,10^-8,10^-8,10^-8]);
+ Q= 5000*eye(10);
+ 
  
  for i=1:501
      
-     C_dx = C_dx_sim(:,:,i);
-     C = [2*C_dx C1];
+    C_dx = C_dx_sim(:,:,i);
+    C = [2*C_dx C1];
  
-    [P, L, G] = care(A, B, C'*C, R);
-    P_ris = [P_ris; P]; 
+    [P, L, G] = care(A, C', Q, R);
+    P_ris = [P_ris; P];
+    
  end
