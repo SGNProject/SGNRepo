@@ -1,0 +1,17 @@
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="2,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type1" id="S2T1U3">v_n_dot</span>, <span class="var type1" id="S3T2U4">R_nb_dot</span>] = mechanisation(<span class="var type1" id="S4T1U7">w_ib</span>, <span class="var type1" id="S5T1U8">f_b</span>, <span class="var type1" id="S6T2U9">R_nb</span>, <span class="var type1" id="S7T3U10">t</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="2,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,3" id="srcline3"> 3</a></span><span class="line"><span class="mxinfo " id="T1:U7"><span class="var type1" id="S8T1U13">g_n</span> = <span class="mxinfo " id="T1:U9"><span class="mxinfo " id="T4:U10">[<span class="mxinfo " id="T3:U11">0</span> <span class="mxinfo " id="T3:U12">0</span> <span class="mxinfo " id="T3:U13">9.81</span>]</span>'</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,4" id="srcline4"> 4</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,5" id="srcline5"> 5</a></span><span class="line"><span class="keyword">if</span> <span class="mxinfo " id="T5:U14"><span class="var type1" id="S7T3U23">t</span> == <span class="mxinfo " id="T3:U16">0</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,6" id="srcline6"> 6</a></span><span class="line">    <span class="mxinfo " id="T1:U17"><span class="var type1" id="S2T1U27">v_n_dot</span> = <span class="mxinfo " id="T1:U19">zeros(<span class="mxinfo " id="T3:U20">3</span>,1)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,7" id="srcline7"> 7</a></span><span class="line">    <span class="mxinfo " id="T2:U21"><span class="var type1" id="S3T2U34">R_nb_dot</span> = <span class="mxinfo " id="T2:U23">eye(3)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,8" id="srcline8"> 8</a></span><span class="line">    <span class="var type0" id="S6T0U40">R_nb</span> = eye(3);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,9" id="srcline9"> 9</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="2,10" id="srcline10">10</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,11" id="srcline11">11</a></span><span class="line"><span class="var type0" id="S11T0U46">Skew</span> = skew(<span class="var type0" id="S4T0U49">w_ib</span>);</span></span>
+<span class="srcline"><span class="lineno"><a href="2,12" id="srcline12">12</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,13" id="srcline13">13</a></span><span class="line"><span class="var type0" id="S2T0U52">v_n_dot</span> = <span class="var type0" id="S6T0U55">R_nb</span> * <span class="var type0" id="S5T0U56">f_b</span> + <span class="var type0" id="S8T0U57">g_n</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="2,14" id="srcline14">14</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="2,15" id="srcline15">15</a></span><span class="line"><span class="var type0" id="S3T0U60">R_nb_dot</span> = <span class="var type0" id="S6T0U62">R_nb</span> * <span class="var type0" id="S11T0U63">Skew</span>;</span></span>
+</pre>
