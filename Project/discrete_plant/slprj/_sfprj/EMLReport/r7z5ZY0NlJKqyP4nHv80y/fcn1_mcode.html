@@ -1,0 +1,48 @@
+<!-- saved from url=(0014)about:internet -->
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> [<span class="var type0" id="S2T0U3">y</span>,<span class="var type0" id="S3T0U4">k</span>] = fcn(<span class="var type1" id="S4T1U7">A</span>,<span class="var type1" id="S5T2U8">C</span>,<span class="var type1" id="S6T1U9">Q</span>,<span class="var type1" id="S7T3U10">R</span>,<span class="var type1" id="S8T4U11">P</span>,<span class="var type1" id="S9T4U12">K</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line"><span class="comment">% %%% good inversion</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line"><span class="comment">% temp = C*P*C' + R;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line"><span class="comment">% [n,m] = size(temp);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line"><span class="comment">% [U,S,V] = svd(temp);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11">11</a></span><span class="line"><span class="comment">% pos = 0;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12">12</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13">13</a></span><span class="line"><span class="comment">% % maximun admissible condition number</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14">14</a></span><span class="line"><span class="comment">% csi = 10^3;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,15" id="srcline15">15</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,16" id="srcline16">16</a></span><span class="line"><span class="comment">% for i=n:-1:1</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,17" id="srcline17">17</a></span><span class="line"><span class="comment">%     if( S(1,1)/S(i,i) &gt; csi)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,18" id="srcline18">18</a></span><span class="line"><span class="comment">%         S(i,i) = 0;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,19" id="srcline19">19</a></span><span class="line"><span class="comment">%         pos = i; % keeps the last eliminated singular value</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,20" id="srcline20">20</a></span><span class="line"><span class="comment">%     end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,21" id="srcline21">21</a></span><span class="line"><span class="comment">% end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,22" id="srcline22">22</a></span><span class="line"><span class="comment">% </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,23" id="srcline23">23</a></span><span class="line"><span class="comment">% tempNZ = S(1:pos-1,1:pos-1); %take the non-zero set</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,24" id="srcline24">24</a></span><span class="line"><span class="comment">% tempI = inv(tempNZ);</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,25" id="srcline25">25</a></span><span class="line"><span class="comment">% S(1:pos-1,1:pos-1) = tempI(1:pos-1,1:pos-1); % now S is the inverse matrix</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,26" id="srcline26">26</a></span><span class="line"><span class="comment">% new_inv = V * S * U';</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,27" id="srcline27">27</a></span><span class="line"> </span></span>
+<span class="srcline"><span class="lineno"><a href="1,28" id="srcline28">28</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,29" id="srcline29">29</a></span><span class="line"><span class="comment">%%% Discrete Riccati Equation</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,30" id="srcline30">30</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,31" id="srcline31">31</a></span><span class="line"><span class="var type0" id="S4T0U15">A</span> = <span class="message error" id="M1F1C"><span class="var type1" id="S4T1U17">A</span> - <span class="mxinfo " id="T2:U8"><span class="var type1" id="S9T4U19">K</span>*<span class="var type1" id="S5T2U20">C</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,32" id="srcline32">32</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,33" id="srcline33">33</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="1,34" id="srcline34">34</a></span><span class="line"><span class="comment">% y = Q + A'*P*A - A'*P*C'*(new_inv)*C*P*A;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,35" id="srcline35">35</a></span><span class="line"><span class="var type0" id="S2T0U23">y</span> = <span class="var type1" id="S6T1U26">Q</span> + <span class="var type0" id="S4T0U30"><span class="message error" id="M2F1C">A</span></span>'*<span class="var type0" id="S8T0U31">P</span>*<span class="var type0" id="S4T0U32">A</span> - <span class="var type0" id="S4T0U40">A</span>'*<span class="var type0" id="S8T0U41">P</span>*<span class="var type0" id="S5T0U43">C</span>'*(inv(<span class="var type0" id="S5T0U50">C</span>*<span class="var type0" id="S8T0U51">P</span>*<span class="var type0" id="S5T0U53">C</span>' + <span class="var type0" id="S7T0U54">R</span>))*<span class="var type0" id="S5T0U55">C</span>*<span class="var type0" id="S8T0U56">P</span>*<span class="var type0" id="S4T0U57">A</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,36" id="srcline36">36</a></span><span class="line"><span class="comment">% % </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,37" id="srcline37">37</a></span><span class="line"><span class="comment">% y = Q + A'*P*A - A'*P*C*inv(C'*P*C' + R)*C'*P*A;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,38" id="srcline38">38</a></span><span class="line"><span class="comment">% % </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,39" id="srcline39">39</a></span><span class="line"><span class="comment">% % </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,40" id="srcline40">40</a></span><span class="line"><span class="comment">% % %% Gain Matrix</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,41" id="srcline41">41</a></span><span class="line"><span class="comment">% % </span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,42" id="srcline42">42</a></span><span class="line"><span class="comment">% % k = new_inv*C*P*A;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,43" id="srcline43">43</a></span><span class="line"><span class="comment">% k = inv(C*P*C' + R)*C*P*A;</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,44" id="srcline44">44</a></span><span class="line"><span class="var type0" id="S3T0U60">k</span> = <span class="var type0" id="S4T0U65"><span class="message error" id="M3F1C">A</span></span>'*<span class="var type0" id="S8T0U66">P</span>*<span class="var type0" id="S5T0U68">C</span>'*(inv(<span class="var type0" id="S5T0U75">C</span>*<span class="var type0" id="S8T0U76">P</span>*<span class="var type0" id="S5T0U78">C</span>' + <span class="var type0" id="S7T0U79">R</span>));</span></span>
+<span class="srcline"><span class="lineno"><a href="1,45" id="srcline45">45</a></span><span class="line"></span></span>
+</pre>
