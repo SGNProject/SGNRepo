@@ -1,6 +1,10 @@
 \documentclass{beamer}
 \label{key}\usetheme{Singapore}
-\usepackage{ dsfont }
+\usepackage{dsfont}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
 %\usepackage{ tipa }
 
 \title{Nonlinear Observer for Tightly Coupled Integration of Pseudorange and Inertial Measurements}
@@ -15,32 +19,21 @@
 	\titlepage
 	\end{frame}	
 
-
-	\begin{frame}
+    \AtBeginSection[]
+	{
+	
+	\begin{frame}<beamer>
 		\frametitle{Outline}
-		
-		\begin{enumerate}
-			\item Introduction
-			\item Models
-				\begin{enumerate}
-					\item Vehicle Kinematics
-					\item Inertial Sensor Models
-					\item Pseudorange Measurement Model
-				\end{enumerate}
-			\item Observer Desing
-				\begin{enumerate}
-					\item Attitude Observer
-					\item Translation Motion Observer
-					\item Stability and Selection of Gain Matrix
-				\end{enumerate}
-			\item Implementation Design
-			\item Case Study
-		\end{enumerate}	
+		\tableofcontents[currentsection]
 	\end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\section{Introduction}
 	\begin{frame}
 		\frametitle{Introduction}
-		This presentation shows the obtained results by the implementation of the article written by Tor. A. Johansen and Thor I. Fossen.
+		This presentation shows the obtained results by the studying of the article written by Tor. A. Johansen and Thor I. Fossen.
 		\vspace{0.5cm}
 		
 	\begin{figure}[H]
@@ -53,15 +46,38 @@
 	\begin{frame}
 		\frametitle{Introduction}
 	%	The work has been developed in Matlab and Simulink (v. R2016b).
-	The goal of navigation systems is to estimate the vehicle position within a certain area. This is let generally by a inertial navigation system, based on $IMU$ (Inertial Measurement Unit).\\
+	The goal of navigation system is to estimate the vehicle position within a certain area. The most common approach is to implement a inertial navigation system, based on $IMU$ (Inertial Measurement Unit).\\
+	\vspace{0.3cm}
+	An inertial navigation system ($INS$) is a navigation system that calculates the position, the orientation and the velocity of a moving vehicle without the need for external references, by using a computer, motion sensors (accelerometers), rotation sensors (gyroscopes) and occasionally magnetic sensors (magnetometers).
 	
-	Using an interconnection of a nonlinear attitude observer and a translational motion observer based on pseudorange and range-range measurements, a tightly coupled integrated aided inertial navigation system is designed!?!?!?\\
+	%Using an interconnection of a nonlinear attitude observer and a translational motion observer based on pseudorange and range-range measurements, a tightly coupled integrated aided inertial navigation system is designed!?!?!?\\
 	
-	Due to the problem of measurements integration, this method is supported by other techniques. In this work, the inertial navigation system is aid by pseudorange measurements, obtained by transponders.
+	%Due to the problem of measurements integration, this method is supported by other techniques. In this work, the inertial navigation system is aid by pseudorange measurements, obtained by transponders.
 	%The article shows hot to build an inertial navigation  system  with the aid of pseudorange measurements, obtained by proper transponders.
 	\end{frame}
 
 
+	\begin{frame}
+		\frametitle{Introduction}
+		In order to estimate position, velocity and orientation, inertial sensors measurements have to been integrated.
+		
+		\[ p =  \int_0^t{v dt} = \bar{v}t \]
+		\vspace{0.2cm}
+		Therefore sensor bias and noise effects diverge during time.
+		\vspace{0.2cm}
+		To solve this problem, $INS$ is aid by other techniques, such as $GPS$, $range-range$ measurements, etc..\\
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Introduction}
+		Here the goal is to support $INS$ with $pseudorange$ measurements, obtained by transponders, and $nonlinear$ $observers$. 
+		
+		\begin{figure}[H]
+			\includegraphics[scale=0.4]{transp}
+		\end{figure}
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model}
 	\begin{frame}
 	\frametitle{Vehicle Kinematics}
 	The vehicle kinematic model is given by
@@ -91,21 +107,24 @@
 	where $\epsilon_f$, $\epsilon_\omega$ and $\epsilon_m$ account for noise, and $b$ denotes the rate gyro bias that is driven by the noise $\epsilon_b$ and assumed to be bounded.  
 	\\ All sensors are 3-D.
 	\end{frame}
-	
+
 	\begin{frame}
 	\frametitle{Pseudorange Measurement Model}
-	
-	The geometric range 
+	The range is generally measured indirectly by some receiver that measures signal time of arrival, phase difference or other variables. The geometric range 
 	
 	\[ \rho_i = \|p^n - p^n_i\|_2 \]
 	
 	is a nonlinear function of the vehicle position $p^n$ and the $i$th transponder position $p^n_i$, given by their Euclidean distance.
-	\\ The pseudorange measurement model is
+	\end{frame}
 	
-	\[ y_i = \rho_i + \beta + \epsilon_{yi} \]
-	
-	where $\beta \in \mathds{R}$ is a bias parameter due to unknown clock synchronization errors or other unknown effects and $\epsilon_{yi}$ the noise.
-	\\ $i = 1,2,...,m$ where $m$ is the number of measurements.
+	\begin{frame}
+		\frametitle{Pseudorange Measurement Model}
+		The pseudorange measurement model is
+		
+		\[ y_i = \rho_i + \beta + \epsilon_{yi} \]
+		
+		where $\beta \in \mathds{R}$ is a bias parameter due to unknown clock synchronization errors or other unknown effects and $\epsilon_{yi}$ the noise.
+		$i = 1,2,...,m$ where $m$ is the number of transponders.
 	\end{frame}
 	
 	\begin{frame}
@@ -125,55 +144,100 @@
 	\end{pmatrix} 
 	$$
 	
-	$\varepsilon \in \mathds{R}^{m-1}$ the noise and $\delta \in \mathds{R}^{m-1}$ the vector of squared range measurements. \\ $x := (p^n_\Delta;\beta)$ where $p_\Delta^n = p^n - p^n_0$ ($p_\Delta^n$ is a reference point in NED). 
+	$\varepsilon \in \mathds{R}^{m-1}$ the noise and $\delta \in \mathds{R}^{m-1}$ the vector of squared range measurements. \\ $x := (p^n_\Delta;\beta)$ where $p_\Delta^n = p^n - p^n_0$ ($p_0^n$ is a reference point in NED). 
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Observer Design}
+		\frametitle{Pseudorange Measurement Model}
+		If $m \geqslant 5$ and if there is no measurement noise, the unique solution to 
+		
+		\[ 2C_{\delta x} x = \delta + \epsilon \]
+		
+		is
+		
+		\[\hat{x} = \frac {C_{\delta x}^{+} \delta}{2}  \]
+		
+		where $\hat{x} := (\hat{p^n_\Delta};\hat{\beta})$ is an estimation of the vehicle position and of the clock bias.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nonlinear Observers}
+	\begin{frame}
+	\frametitle{Nonlinear Observer}
 	Two observer are designed: one for the attitude estimation and one for the translational motion estimation. 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{observers}
-		\caption{Overall block diagram for tightly integrated observer.}
+	%	\caption{Overall block diagram for tightly integrated observer.}
 	\end{figure}
 	\end{frame}
 
 	\begin{frame}
+		\frametitle{Nonlinear Observer}
+		The Attitude Observer ($AO$) should provide an estimation of the bias gyroscope, in order to \textit{clean} the angular velocity measurements, and of the rotation matrix from the body frame to the $NED$ frame.\\
+		\vspace{0.3cm}
+		The pseudorange model provides an initialisation of the translational motion observer ($TMO$) which should estimate position, velocity and acceleration of the vehicle and the clock bias of the transponders.
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Attitude Observer}
+
+	\begin{frame}
 		\frametitle{Attiture Observer}
-		The attitude variables to estimate are $R^n_b$ and $b$.
+		One of the variables to estimate is the gyroscope bias
+		
+		\[ \dot{\hat{b}} = Proj(-k_I vex(\mathds{P}_a (sat(\hat{R}^n_b)^T K_P J(t, \hat{R}^n_b))),M_{\hat{b}} )\]
+		
+		where $sat(\cdot)$ is an element-wise saturation, $vex(S(x)) = x$ and $k_I > 0$.\\
+		\vspace{0.3cm}
+		The formula guarantees that the estimation is bounded: 
+		
+		\[\|\hat{b} \|_2 \leqslant M_{\hat{b}} \]	
+	\end{frame}
+
+
+
+	\begin{frame}
+		\frametitle{Attiture Observer}
+		The second variable to estimate is the rotation matrix $R^n_b$.
 		
 		\[ \dot{\hat{R}}^n_b  =  \hat{R}^n_b S(\omega^b_{ib,IMU} - \hat{b}) + \sigma K_pJ(t, \hat{R}^n_b)       \]
 		
-		\[ \dot{\hat{b}} = Proj(-k_I vex(\mathds{P}_a (sat(\hat{R}^n_b)^T K_P J(t, \hat{R}^n_b))),M_{\hat{b}} )           \]
-		
-		where $K_P > 0 \in \mathds{R}^{3\times 3}$ is a symmetric gain matrix, $K_I > 0$ is a scalar gain and $\sigma \geq 1$.\\ 
-		
-		The function $sat(\cdot)$ is an element-wise saturation, while $Proj(\cdot)$ is a parameter projection which ensures that $\|\hat{b} \|_2$ is bounded.
+		\vspace{0.3cm}
+		where $K_P > 0 \in \mathds{R}^{3\times 3}$ is a symmetric gain matrix, $\sigma \geq 1$.\\ 
+		\vspace{0.3cm}
+		Every time $\hat{b}$ is available, this is subtracted to the gyroscope measurement.\\
+	\end{frame}
+
+
+	\begin{frame}
+ 		\frametitle{Attitude Observer}
+ 		The function $J(\cdot) \in  \mathds{R}^{3\times 3}$ is a stabilizing injection term that acts as an angular velocity when the discrepancy between measured vectors in body frame, here specific force and magnetic field from the accelerometer and the magnetometer, with the corresponding one in $NED$ frame.
+ 		
+ 		\[ J(t, \hat{R}^n_b)  = (E^n - \hat{R}^n_b E^b)(E^b)^T   \]
+
+ 		
+
 	\end{frame}
 
 	\begin{frame}
- 		\frametitle{Attiture Observer}
- 		The function $J(\cdot) \in  \mathds{R}^{3\times 3}$ is a stabilizing injection term
- 		
- 		\[ J(t, \hat{R}^n_b)  = (E^n - \hat{R}^n_b E^b)(E^b)^T    \]
- 		
- 		based on the vector measurements $m^b_{mag}$ and $f^b_{IMU}$  and their NED reference vetors $m^n$ and $\hat{f}^n$ used to define vectors scaled by nonzero terms
- 		
- 		\[ q_1^b = m^b_{mag}/\|m^b_{mag}\|_2 \qquad q_2^b = f^b_{IMU}/\|g^n\|_2    \]
- 		
- 		\[ q_1^n = m^n/\|m^n\|_2 \qquad q_2^n = \hat{f}^n/\|g^n\|_2    \]
- 		
- 		and the $3\times3$ matrices
- 		
- 		\[ E^b = (q_1^b, S(q^b_1)q_2^b, S^2(q_1^b)q_2^b)    \]
- 		
- 		\[ E^n = (q_1^n, S(q^n_1)q_2^n, S^2(q_1^n)q_2^n)    \]
+		\frametitle{Attitude Observer}
+		%$E^n$,$E^b \in \mathds{R}^{3\times 3}$
+		
+		\[ E^b = (q_1^b, S(q^b_1)q_2^b, S^2(q_1^b)q_2^b)    \]
+		
+		\[ E^n = (q_1^n, S(q^n_1)q_2^n, S^2(q_1^n)q_2^n)    \]
+		
+		
+		\[ q_1^b = m^b_{mag}/\|m^b_{mag}\|_2 \qquad q_2^b = f^b_{IMU}/\|g^n\|_2    \]
+		
+		\[ q_1^n = m^n/\|m^n\|_2 \qquad q_2^n = \hat{f}^n/\|g^n\|_2    \]
+		
 	\end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Translational Motion Observer}
 
 	\begin{frame}
 		\frametitle{Translational Motion Observer}
-		The variables to estimate are $p^n$,$v^n$,$f^n$,$\beta$.
+		The $TMO$ estimates $p^n$, $v^n$, $f^n$, $\beta$.
 		
 		\[ \dot{\hat{p}}^n_\Delta = \hat{v}^n + K_{pp}(\delta - \hat{\delta})  \]
 		
@@ -190,12 +254,38 @@
 
 	\begin{frame}
 		\frametitle{Translational Motion Observer}
-		Then it is possible to build the \textit{estimated state} vector $\dot{\tilde{\chi}} = (\tilde{p}^n_\Delta;\tilde{\beta}; \tilde{\hat{v}}^n; \tilde{\hat{f}}^n) \in \mathds{R}^{10}$ and the relative LTV error system
+		The injection term is provided by
 		
-		\[ \dot{\tilde{\chi}} = (A - KC)\tilde{\chi} + Bu + B\epsilon_u + K\varepsilon\]
-		
-		\[ u = \tilde{R}^n_b \dot{f}^b + \tilde{R}^n_b S(\omega^b_{ib})f^b - \hat{R}^n_b S(\tilde{b})f^b\]
+		\[  \delta - \hat{\delta} \]
+		where
+		\begin{itemize}
+			\item $\delta$ is computed by the pseudorange model;
+			\item $\hat{\delta}$ by the TMO.
+		\end{itemize}
+	
+	For each variable to estimate, the injection term is weighted by a gain $K_{ij}$.		
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Translational Motion Observer}
+		The gain matrix $K$ is time varying and calculated as
+		
+		\[ K := PC^TR^{-1} \]
+		
+		where $P$ is solution of the $Riccati$ equation
+		
+		\[ \dot{P} = PA + A^TP - PC^TR^{-1}CP + Q\]
+	\end{frame}
+
+%	\begin{frame}
+	%	\frametitle{Translational Motion Observer}
+	%	The $TMO$ equations can be written in matrix form,
+	%	Then it is possible to build the \textit{estimated state} vector $\dot{\tilde{\chi}} = (\tilde{p}^n_\Delta;\tilde{\beta}; \tilde{\hat{v}}^n; \tilde{\hat{f}}^n) \in \mathds{R}^{10}$ and the relative LTV error system
+		
+	%	\[ \dot{\tilde{\chi}} = (A - KC)\tilde{\chi} + Bu + B\epsilon_u + K\varepsilon\]
+		
+	%	\[ u = \tilde{R}^n_b \dot{f}^b + \tilde{R}^n_b S(\omega^b_{ib})f^b - \hat{R}^n_b S(\tilde{b})f^b\]
+%	\end{frame}
 
 	\begin{frame}
 		\frametitle{Translational Motion Observer}
@@ -227,29 +317,18 @@
 		\end{pmatrix}
 		$$
 	\end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\section{Implementation}	
 	\begin{frame}
-		\frametitle{Translational Motion Observer}
-		The gain matrix $K$ is time varying and calculated as
-		
-		\[ K := PC^TR^{-1} \]
-		
-		 where $P$ is solution of the $Riccati$ equation
-		
-		\[ \dot{P} = PA + A^TP - PC^TR^{-1}CP + Q\]
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Implementation Design}
+		\frametitle{Implementation}
 		The whole model has been implemented with MATLAB/Simulink (R2016b).
 		\\
 		\vspace{0.5cm}
 		In the following each observer is presented in terms of structure and results, i.e. the difference between the true value of the vehicle position and of the bias parameter and their estimation.
-		
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Implementation Design}
+		\frametitle{Implementation}
 		Data used by the authors are \\
 		\begin{itemize}
 			\item pseudorange measurements obtained by radio beacons;
@@ -261,7 +340,7 @@
 	
 	\begin{frame}
 		\frametitle{Data Generation}
-		In order to generate data the $6DOF$ Matlab block has been used
+		In order to generate data the $6DOF$ Simulink block has been used
 		\begin{figure}[H]
 			\includegraphics[scale=0.4]{6DOF}
 		\end{figure}
@@ -271,106 +350,135 @@
 		\frametitle{Data Generation}
 		\begin{itemize}
 			\item The real position of the vehicle is given from $X_e(m)$;
-			\item The pseudorange measurements always by $X_e(m)$ but corrupted by noise;
-			\item The accelerations from $A_b(m/s^2)$;
+			\item The range measurements always by $X_e(m)$ but corrupted by noise;
+			\item Specific forces from $A_b(m/s^2)$;
 			\item Angular velocities from $\omega_b(rad/s)$.
 		\end{itemize}
 	\end{frame}
+
+
+%	\begin{frame}
+	%	\frametitle{Implementation}
+	%	The Simulink implementation looks like the one in the following figure.
+	%	\begin{figure}[H]
+	%		\includegraphics[scale = 0.3]{scheme}
+	%	\end{figure}
+%	\end{frame}
 	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{NAT}
+%	\begin{frame}
+	%	\frametitle{Nonlinear Algebraic Transformation}
+	%	\includegraphics[scale = 0.24]{NLAT}
+%	\end{frame}
+\section{Results}		
 	\begin{frame}
-		\frametitle{Implementation Design}
-		The Simulink implementation looks like the one in the following figure.
-		\begin{figure}[H]
-			\includegraphics[scale = 0.3]{scheme}
-		\end{figure}
+		\frametitle{Pseudorange Model Results}
+		% position and bias error
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.3]{coming-soon}\\
+			\includegraphics[scale= 0.3]{coming-soon}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.3]{coming-soon}\\
+			\includegraphics[scale= 0.3]{coming-soon}
+		\end{columns}
 	\end{frame}
-	
+
+		
+		
+	%\begin{frame}
+	%	\frametitle{Implementation Design}
+	%	The $AO$ is made of three main function blocks:\\
+	%	\begin{itemize}
+	%		\item $J\_computation$ computes the stabilizing injection term;
+			
+	%		\item $b\_computation$ computes the estimation of the gyroscope bias;
+			
+	%		\item $Rot\_func$ computes an estimation of the rotation matrix $R_b^n$.
+	%	\end{itemize}
+%	\end{frame}
+
 	\begin{frame}
-			\frametitle{Implementation Design}
-			The $Nonlinear Algebraic Transform$ block computes the $C_{\delta x}$ matrix and the following variable:
-			
-			\[\hat{x} = \frac {C_{\delta x}^{+} \delta}{2}  \]
-			
-			that is the unique solution to
-			
-			\[ 2C_{\delta x} x = \delta + \epsilon \]
-			
-			in the case of $m \geqslant 5$ transponders, where $x = \begin{pmatrix}
-				p^n \\
-				\beta
-			\end{pmatrix}$.
-		\end{frame}
-		
-		\begin{frame}
-			\frametitle{Nonlinear Algebraic Transform Implementation}
-			\includegraphics[scale = 0.24]{NLAT}
-		\end{frame}
-		
-		\begin{frame}
-			figures
-		\end{frame}
-		
-		
-	\begin{frame}
-		\frametitle{Implementation Design}
-		The Attitude Observer is made of three main function blocks:\\
-		\begin{itemize}
-			\item $J(\cdot) $ is a stabilizing injection term
-			
-			\item $b\_computation$ computes the dinamics of the bias by means of the $Proj(\cdot)$ function
-			
-			\item $Rot\_func$ computes an estimate of the rotation matrix
-		\end{itemize}
-		
-	\end{frame}
-	
-	\begin{frame}
-		The following picture shows the Simulink scheme:
-		\frametitle{Attitude Observer Implementation}
-		\includegraphics[scale=0.24]{at}
+		\frametitle{$AO$ Results}
+		% angles error and norm of Rnb
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.3]{coming-soon}\\
+			\includegraphics[scale= 0.3]{coming-soon}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.3]{coming-soon}\\
+			\includegraphics[scale= 0.3]{coming-soon}
+		\end{columns}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Translational Motion Observer Design}
-		The translational Motion Observer is made of three blocks:\\
+		\frametitle{Results}
+		Whatever tuning does not allow to have a good estimation of the angles, in terms of error respect to the true ones.
+	\end{frame}
+
+%	\begin{frame}
+	%	The following picture shows the Simulink scheme:
+	%	\frametitle{Attitude Observer Implementation}
+	%	\includegraphics[scale=0.24]{at}
+%	\end{frame}
+
+	%\begin{frame}
+	%	\frametitle{Translational Motion Observer Design}
+	%	The $TMO$ is made of three blocks:\\
 		
-		\begin{itemize}
-			\item The first one solves the Riccati Equation to get the gain matrix $K$;
+	%	\begin{itemize}
+	%		\item The first one solves the $Riccati$ $Equation$ to get the gain matrix $K$;
 			
-			\item The $TMO\_fuction$ computes the estimate of position, velocity, acceleration and bias;
+	%		\item The $TMO\_fuction$ computes the estimate of position, velocity, acceleration and bias;
 			
-			\item The last block computes the error dynamics.
-		\end{itemize}
-	\end{frame}
+		%	\item The last block computes the error dynamics.
+	%	\end{itemize}
+%	\end{frame}
+	
+%	\begin{frame}
+	%	\frametitle{Translational Motion Observer Design}
+	%	\includegraphics[scale = 0.25]{TMO}
+%	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Translational Motion Observer Design}
-		\includegraphics[scale = 0.25]{TMO}
+	\frametitle{$TMO$ Results}
+	% position and beta error
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.2]{nlo_x}\\
+			\includegraphics[scale= 0.2]{nlo_y}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale= 0.2]{nlo_z}\\
+			\includegraphics[scale= 0.3]{coming-soon}
+		\end{columns}
 	\end{frame}
 	
-	\begin{frame}
-		figures
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Implementation Design}
-		The estimates obtained by the Translational Motion Observer are then sent to a block that implements the Kalman-Bucy Filter in order to make a better estimation
+%	\begin{frame}
+	%	\frametitle{Implementation Design}
+	%	The estimates obtained by the Translational Motion Observer are then sent to a block that implements the Kalman-Bucy Filter in order to make a better estimation
 		
-		\begin{figure}[H]
-			\includegraphics[scale=0.3]{KBF}
-		\end{figure}
-		
-	\end{frame}
+	%	\begin{figure}[H]
+	%		\includegraphics[scale=0.3]{KBF}
+	%	\end{figure}	
+%	\end{frame}
 	
-	\begin{frame}
-		Kalman Equations
-	\end{frame}
+	%\begin{frame}
+	%	Kalman Equations
+	%\end{frame}
 	
-	\begin{frame}
-			figures
-	\end{frame}
+%	\begin{frame}
+	%		figures
+%	\end{frame}
 	
-	\begin{frame}
-			Confronto tra gli osservatori
-	\end{frame}
+	%\begin{frame}
+	%		Confronto tra gli osservatori
+	%\end{frame}
 \end{document}
