@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.26)  9 MAR 2018 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.26)  11 MAR 2018 19:17
 entering extended mode
 **./document.tex
 (document.tex
@@ -848,21 +848,21 @@ Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 ) (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 17.
 
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmss.fd"
@@ -934,7 +934,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 17.
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.
 sty"
@@ -946,59 +946,59 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
  (document.out) (document.out)
 \@outlinefile=\write5
 \openout5 = `document.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 16.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 16.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 16.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 16.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 17.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 16.
+(Font)                  OT1/lmss/m/n --> OT1/lmr/m/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/bx/n on input line 16.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/lmss/bx/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 16.
+(Font)                  OT1/lmr/bx/n --> OT1/lmss/bx/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 16.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 16.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 16.
+(Font)                  OT1/lmr/m/it --> OT1/lmss/m/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 16.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 16.
+(Font)                  OT1/lmr/bx/it --> OT1/lmss/m/it on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 16.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 16.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 16.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 16.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmr/bx/n on input line 16.
+(Font)                  OT1/lmss/bx/n --> OT1/lmr/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/bx/n on input line 16.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 16.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 16.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/bx/n on input line 16.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/bx/n on input line 17.
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transl
 ator-basic-dictionary-English.dict"
@@ -1029,66 +1029,66 @@ ex.map}
 ] (document.toc) [2
 
 ]
-<title.png, id=253, 1082.24326pt x 206.57175pt>
+<title.png, id=281, 1082.24326pt x 206.57175pt>
 File: title.png Graphic file (type png)
  <use title.png>
-Package pdftex.def Info: title.png used on input line 44.
+Package pdftex.def Info: title.png used on input line 45.
 (pdftex.def)             Requested size: 324.67548pt x 61.97198pt.
 
-Overfull \hbox (17.3856pt too wide) in paragraph at lines 44--44
+Overfull \hbox (17.3856pt too wide) in paragraph at lines 45--45
  [] 
  []
 
 [3
 
  <./title.png>]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 58.
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 58.
 
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 58.
 
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 57.
+(Font)              <10.95> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 57.
+(Font)              <8> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 57.
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+(Font)              <6> on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
  ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
 "
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 57.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 58.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 57.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 58.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 57.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 58.
  [4
 
 ] [5
 
-] <transp.jpg, id=447, 263.98625pt x 263.98625pt>
+] <transp.jpg, id=496, 263.98625pt x 263.98625pt>
 File: transp.jpg Graphic file (type jpg)
  <use transp.jpg>
-Package pdftex.def Info: transp.jpg used on input line 78.
+Package pdftex.def Info: transp.jpg used on input line 79.
 (pdftex.def)             Requested size: 105.59262pt x 105.59262pt.
 
 [6
@@ -1102,7 +1102,7 @@ Package pdftex.def Info: transp.jpg used on input line 78.
 ] [10
 
 ]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 128.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 129.
 
 
 ("C:\Users\Utente\AppData\Local\Programs\MiKTeX 2.9\tex\latex\doublestroke\udsr
@@ -1117,10 +1117,10 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ] (document.toc) [14
 
 ]
-<observers.png, id=1036, 704.6325pt x 406.51875pt>
+<observers.png, id=1148, 704.6325pt x 406.51875pt>
 File: observers.png Graphic file (type png)
  <use observers.png>
-Package pdftex.def Info: observers.png used on input line 172.
+Package pdftex.def Info: observers.png used on input line 173.
 (pdftex.def)             Requested size: 211.39139pt x 121.95656pt.
  [15
 
@@ -1142,108 +1142,265 @@ Package pdftex.def Info: observers.png used on input line 172.
 
 ] [24
 
-] (document.toc)
-[25
+]
+<pric.jpg, id=1851, 702.625pt x 526.96875pt>
+File: pric.jpg Graphic file (type jpg)
+ <use pric.jpg>
+Package pdftex.def Info: pric.jpg used on input line 329.
+(pdftex.def)             Requested size: 210.78912pt x 158.09184pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 329.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 329.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 329.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 329.
 
-] [26
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 329.
 
-] [27
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 329.
 
-] <6DOF.png, id=1866, 383.4325pt x 467.7475pt>
-File: 6DOF.png Graphic file (type png)
- <use 6DOF.png>
-Package pdftex.def Info: 6DOF.png used on input line 347.
-(pdftex.def)             Requested size: 153.37029pt x 187.09567pt.
+ [25
 
-[28
+ <./pric.jpg>]
+<kric.jpg, id=1924, 702.625pt x 526.96875pt>
+File: kric.jpg Graphic file (type jpg)
+ <use kric.jpg>
+Package pdftex.def Info: kric.jpg used on input line 342.
+(pdftex.def)             Requested size: 175.6558pt x 131.74185pt.
 
- <./6DOF.png (PNG copy)>] [29
+Overfull \hbox (22.01088pt too wide) in paragraph at lines 342--342
+ [][] 
+ []
 
-] (document.toc) [30
+<kric2.jpg, id=1925, 702.625pt x 526.96875pt>
+File: kric2.jpg Graphic file (type jpg)
+ <use kric2.jpg>
+Package pdftex.def Info: kric2.jpg used on input line 342.
+(pdftex.def)             Requested size: 175.6558pt x 131.74185pt.
+
+Overfull \hbox (22.01088pt too wide) in paragraph at lines 342--342
+ [][] 
+ []
+
+[26
+
+ <./kric.jpg> <./kric2.jpg>] (document.toc) [27
+
+] [28
+
+] [29
 
 ]
-<coming-soon.jpg, id=2063, 339.2675pt x 339.2675pt>
+<6DOF.png, id=2213, 383.4325pt x 467.7475pt>
+File: 6DOF.png Graphic file (type png)
+ <use 6DOF.png>
+Package pdftex.def Info: 6DOF.png used on input line 370.
+(pdftex.def)             Requested size: 153.37029pt x 187.09567pt.
+ [30
+
+ <./6DOF.png (PNG copy)>] [31
+
+] (document.toc) [32
+
+]
+<coming-soon.jpg, id=2432, 339.2675pt x 339.2675pt>
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 389.
+Package pdftex.def Info: coming-soon.jpg used on input line 412.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
 
 <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 389.
+Package pdftex.def Info: coming-soon.jpg used on input line 412.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 389.
+Package pdftex.def Info: coming-soon.jpg used on input line 412.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 389.
+Package pdftex.def Info: coming-soon.jpg used on input line 412.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
- [31
+ [33
 
  <./coming-soon.jpg>]
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 418.
+Package pdftex.def Info: coming-soon.jpg used on input line 441.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 418.
+Package pdftex.def Info: coming-soon.jpg used on input line 441.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
  <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 418.
+Package pdftex.def Info: coming-soon.jpg used on input line 441.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
 File: coming-soon.jpg Graphic file (type jpg)
 
 <use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 418.
-(pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 418.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 418.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 418.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 418.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 418.
-
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 418.
-
- [32
-
-] [33
-
-] <nlo_x.jpg, id=2255, 702.625pt x 526.96875pt>
-File: nlo_x.jpg Graphic file (type jpg)
-
-<use nlo_x.jpg>
-Package pdftex.def Info: nlo_x.jpg used on input line 462.
-(pdftex.def)             Requested size: 140.5225pt x 105.39188pt.
- <nlo_y.jpg, id=2256, 702.625pt x 526.96875pt>
-File: nlo_y.jpg Graphic file (type jpg)
- <use nlo_y.jpg>
-Package pdftex.def Info: nlo_y.jpg used on input line 462.
-(pdftex.def)             Requested size: 140.5225pt x 105.39188pt.
-
-<nlo_z.jpg, id=2257, 702.625pt x 526.96875pt>
-File: nlo_z.jpg Graphic file (type jpg)
- <use nlo_z.jpg>
-Package pdftex.def Info: nlo_z.jpg used on input line 462.
-(pdftex.def)             Requested size: 140.5225pt x 105.39188pt.
-File: coming-soon.jpg Graphic file (type jpg)
-
-<use coming-soon.jpg>
-Package pdftex.def Info: coming-soon.jpg used on input line 462.
+Package pdftex.def Info: coming-soon.jpg used on input line 441.
 (pdftex.def)             Requested size: 101.78102pt x 101.78102pt.
  [34
 
- <./nlo_x.jpg> <./nlo_y.jpg> <./nlo_z.jpg>]
+] [35
+
+]
+<norm_rot.jpg, id=2643, 702.625pt x 526.96875pt>
+File: norm_rot.jpg Graphic file (type jpg)
+ <use norm_rot.jpg>
+Package pdftex.def Info: norm_rot.jpg used on input line 454.
+(pdftex.def)             Requested size: 281.04501pt x 210.78375pt.
+
+Overfull \vbox (3.44397pt too high) detected at line 454
+ []
+
+[36
+
+ <./norm_rot.jpg>] <nlo_x_0.jpg, id=2714, 702.625pt x 526.96875pt>
+File: nlo_x_0.jpg Graphic file (type jpg)
+
+<use nlo_x_0.jpg>
+Package pdftex.def Info: nlo_x_0.jpg used on input line 497.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_y_0.jpg, id=2715, 702.625pt x 526.96875pt>
+File: nlo_y_0.jpg Graphic file (type jpg)
+
+<use nlo_y_0.jpg>
+Package pdftex.def Info: nlo_y_0.jpg used on input line 497.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_z_0.jpg, id=2716, 702.625pt x 526.96875pt>
+File: nlo_z_0.jpg Graphic file (type jpg)
+
+<use nlo_z_0.jpg>
+Package pdftex.def Info: nlo_z_0.jpg used on input line 497.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_beta_0.jpg, id=2717, 702.625pt x 526.96875pt>
+File: nlo_beta_0.jpg Graphic file (type jpg)
+
+<use nlo_beta_0.jpg>
+Package pdftex.def Info: nlo_beta_0.jpg used on input line 497.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ [37
+
+ <./nlo_x_0.jpg> <./nlo_y_0.jpg> <./nlo_z_0.jpg> <./nlo_beta_0.jpg>] <nlo_x_1.j
+pg, id=2789, 702.625pt x 526.96875pt>
+File: nlo_x_1.jpg Graphic file (type jpg)
+
+<use nlo_x_1.jpg>
+Package pdftex.def Info: nlo_x_1.jpg used on input line 517.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_y_1.jpg, id=2790, 702.625pt x 526.96875pt>
+File: nlo_y_1.jpg Graphic file (type jpg)
+
+<use nlo_y_1.jpg>
+Package pdftex.def Info: nlo_y_1.jpg used on input line 517.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_z_1.jpg, id=2791, 702.625pt x 526.96875pt>
+File: nlo_z_1.jpg Graphic file (type jpg)
+
+<use nlo_z_1.jpg>
+Package pdftex.def Info: nlo_z_1.jpg used on input line 517.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_beta_1.jpg, id=2792, 702.625pt x 526.96875pt>
+File: nlo_beta_1.jpg Graphic file (type jpg)
+
+<use nlo_beta_1.jpg>
+Package pdftex.def Info: nlo_beta_1.jpg used on input line 517.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ [38
+
+ <./nlo_x_1.jpg> <./nlo_y_1.jpg> <./nlo_z_1.jpg> <./nlo_beta_1.jpg>] <nlo_x_2.j
+pg, id=2863, 702.625pt x 526.96875pt>
+File: nlo_x_2.jpg Graphic file (type jpg)
+
+<use nlo_x_2.jpg>
+Package pdftex.def Info: nlo_x_2.jpg used on input line 537.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_y_2.jpg, id=2864, 702.625pt x 526.96875pt>
+File: nlo_y_2.jpg Graphic file (type jpg)
+
+<use nlo_y_2.jpg>
+Package pdftex.def Info: nlo_y_2.jpg used on input line 537.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_z_2.jpg, id=2865, 702.625pt x 526.96875pt>
+File: nlo_z_2.jpg Graphic file (type jpg)
+
+<use nlo_z_2.jpg>
+Package pdftex.def Info: nlo_z_2.jpg used on input line 537.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_beta_2.jpg, id=2866, 702.625pt x 526.96875pt>
+File: nlo_beta_2.jpg Graphic file (type jpg)
+
+<use nlo_beta_2.jpg>
+Package pdftex.def Info: nlo_beta_2.jpg used on input line 537.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ [39
+
+ <./nlo_x_2.jpg> <./nlo_y_2.jpg> <./nlo_z_2.jpg> <./nlo_beta_2.jpg>] <nlo_x_3.j
+pg, id=2937, 702.625pt x 526.96875pt>
+File: nlo_x_3.jpg Graphic file (type jpg)
+
+<use nlo_x_3.jpg>
+Package pdftex.def Info: nlo_x_3.jpg used on input line 556.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_y_3.jpg, id=2938, 702.625pt x 526.96875pt>
+File: nlo_y_3.jpg Graphic file (type jpg)
+
+<use nlo_y_3.jpg>
+Package pdftex.def Info: nlo_y_3.jpg used on input line 556.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_z_3.jpg, id=2939, 702.625pt x 526.96875pt>
+File: nlo_z_3.jpg Graphic file (type jpg)
+
+<use nlo_z_3.jpg>
+Package pdftex.def Info: nlo_z_3.jpg used on input line 556.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ <nlo_beta_3.jpg, id=2940, 702.625pt x 526.96875pt>
+File: nlo_beta_3.jpg Graphic file (type jpg)
+
+<use nlo_beta_3.jpg>
+Package pdftex.def Info: nlo_beta_3.jpg used on input line 556.
+(pdftex.def)             Requested size: 126.46704pt x 94.85028pt.
+ [40
+
+ <./nlo_x_3.jpg> <./nlo_y_3.jpg> <./nlo_z_3.jpg> <./nlo_beta_3.jpg>]
+File: coming-soon.jpg Graphic file (type jpg)
+ <use coming-soon.jpg>
+Package pdftex.def Info: coming-soon.jpg used on input line 575.
+(pdftex.def)             Requested size: 61.0655pt x 61.0655pt.
+File: coming-soon.jpg Graphic file (type jpg)
+ <use coming-soon.jpg>
+Package pdftex.def Info: coming-soon.jpg used on input line 575.
+(pdftex.def)             Requested size: 61.0655pt x 61.0655pt.
+File: coming-soon.jpg Graphic file (type jpg)
+
+<use coming-soon.jpg>
+Package pdftex.def Info: coming-soon.jpg used on input line 575.
+(pdftex.def)             Requested size: 61.0655pt x 61.0655pt.
+File: coming-soon.jpg Graphic file (type jpg)
+ <use coming-soon.jpg>
+Package pdftex.def Info: coming-soon.jpg used on input line 575.
+(pdftex.def)             Requested size: 61.0655pt x 61.0655pt.
+ [41
+
+]
+<traj.jpg, id=3081, 702.625pt x 526.96875pt>
+File: traj.jpg Graphic file (type jpg)
+ <use traj.jpg>
+Package pdftex.def Info: traj.jpg used on input line 582.
+(pdftex.def)             Requested size: 281.04501pt x 210.78375pt.
+
+Overfull \vbox (3.44397pt too high) detected at line 582
+ []
+
+[42
+
+ <./traj.jpg>]
 \tf@nav=\write6
 \openout6 = `document.nav'.
 
@@ -1253,49 +1410,45 @@ Package pdftex.def Info: coming-soon.jpg used on input line 462.
 \tf@snm=\write8
 \openout8 = `document.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
-
-(document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 604.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 604.
+ (document.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 604.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 604.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: FC7EC048954B07D99F637EEF1508F3CE;385.
  ) 
 Here is how much of TeX's memory you used:
- 17881 strings out of 493333
- 340470 string characters out of 3129709
- 544259 words of memory out of 3000000
- 20902 multiletter control sequences out of 15000+200000
+ 18000 strings out of 493333
+ 342103 string characters out of 3129709
+ 553827 words of memory out of 3000000
+ 20988 multiletter control sequences out of 15000+200000
  47071 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,58p,808b,763s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Navigation35} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
-}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-maths
-y.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
-mathit.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
-m/lm-mathex.enc}<C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/doublestroke/dsrom10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Utente/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Utente/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Utente/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Utente/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Utente/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Utente/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Ute
-nte/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso12.pfb><C:/Use
-rs/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C
-:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.p
-fb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lms
-y8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/symbols/msam10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (34 pages, 920852 bytes).
+{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
+nc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
+hsy.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
+m-mathit.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-mathex.enc}<C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/doublestroke/dsrom10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Utente/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Utente/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Utente/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Utente/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Utente/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Utente/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/U
+tente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso12.pfb><C:/U
+sers/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb>
+<C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10
+.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
+msy8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/symbols/msam10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on document.pdf (42 pages, 1504775 bytes).
 PDF statistics:
- 2388 PDF objects out of 2487 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3224 PDF objects out of 3580 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

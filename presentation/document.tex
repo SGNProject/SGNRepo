@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage{lipsum}
 \usepackage{marvosym}
+\usepackage{graphicx}
 %\usepackage{ tipa }
 
 \title{Nonlinear Observer for Tightly Coupled Integration of Pseudorange and Inertial Measurements}
@@ -317,6 +318,28 @@
 		\end{pmatrix}
 		$$
 	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Unbounded $P$}
+		Due to the time varying system and/or to the non-well-posedness, the covariance matrix $P$ is unbounded.
+		\begin{figure}[H]
+			\includegraphics[scale=0.3]{pric}
+		\end{figure} 
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Bounded $K$}
+		Despite that, the gain matrix $K$ results bounded.
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{kric}\\
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.25]{kric2}\\
+		\end{columns}
+	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \section{Implementation}	
 	\begin{frame}
@@ -422,6 +445,14 @@
 		Whatever tuning does not allow to have a good estimation of the angles, in terms of error respect to the true ones.
 	\end{frame}
 
+	\begin{frame}
+		\frametitle{$AO$ Results}
+		\begin{figure}[H]
+			\includegraphics[scale=0.4]{norm_rot}
+		\end{figure}
+		
+	\end{frame}
+
 %	\begin{frame}
 	%	The following picture shows the Simulink scheme:
 	%	\frametitle{Attitude Observer Implementation}
@@ -449,16 +480,105 @@
 	\begin{frame}
 	\frametitle{$TMO$ Results}
 	% position and beta error
+	% no initial error
+	\begin{itemize}
+		\item No initial error.
+	\end{itemize}
 		\begin{columns}[t]
 			\column{.5\textwidth}
 			\centering
-			\includegraphics[scale= 0.2]{nlo_x}\\
-			\includegraphics[scale= 0.2]{nlo_y}
+			\includegraphics[scale=0.18]{nlo_x_0}\\
+			\includegraphics[scale=0.18]{nlo_y_0}
 			\column{.5\textwidth}
 			\centering
-			\includegraphics[scale= 0.2]{nlo_z}\\
-			\includegraphics[scale= 0.3]{coming-soon}
+			\includegraphics[scale=0.18]{nlo_z_0}\\
+			\includegraphics[scale=0.18]{nlo_beta_0}
 		\end{columns}
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+			% position and beta error
+			% no initial error
+			\begin{itemize}
+				\item Initial error [40;30;0;100].
+			\end{itemize}
+			\begin{columns}[t]
+				\column{.5\textwidth}
+				\centering
+				\includegraphics[scale=0.18]{nlo_x_1}\\
+				\includegraphics[scale=0.18]{nlo_y_1}
+				\column{.5\textwidth}
+				\centering
+				\includegraphics[scale=0.18]{nlo_z_1}\\
+				\includegraphics[scale=0.18]{nlo_beta_1}
+			\end{columns}
+	\end{frame}
+
+
+
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+		% position and beta error
+		\begin{itemize}
+			\item Initial error [250;0;0;0].
+		\end{itemize}
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{nlo_x_2}\\
+			\includegraphics[scale=0.18]{nlo_y_2}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{nlo_z_2}\\
+			\includegraphics[scale=0.18]{nlo_beta_2}
+		\end{columns}
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+		% position and beta error
+		\begin{itemize}
+			\item Initial error [100;50;0;100].
+		\end{itemize}
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{nlo_x_3}\\
+			\includegraphics[scale=0.18]{nlo_y_3}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{nlo_z_3}\\
+			\includegraphics[scale=0.18]{nlo_beta_3}
+		\end{columns}
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+		% position and beta error
+		\begin{itemize}
+			\item Initial error [250;100;0;100].
+		\end{itemize}
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{coming-soon}\\
+			\includegraphics[scale=0.18]{coming-soon}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.18]{coming-soon}\\
+			\includegraphics[scale=0.18]{coming-soon}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+		\begin{figure}
+			\includegraphics[scale=0.4]{traj}
+		\end{figure}
 	\end{frame}
 	
 %	\begin{frame}
