@@ -386,35 +386,92 @@
 		\end{itemize}
 	\end{frame}
 
-
-%	\begin{frame}
-	%	\frametitle{Implementation}
-	%	The Simulink implementation looks like the one in the following figure.
-	%	\begin{figure}[H]
-	%		\includegraphics[scale = 0.3]{scheme}
-	%	\end{figure}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Simulink Model}
 	
+		\begin{figure}[H]
+			\includegraphics[scale=0.3]{continuous_mod.png}
+		\end{figure}
+	\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{NAT}
-%	\begin{frame}
-	%	\frametitle{Nonlinear Algebraic Transformation}
-	%	\includegraphics[scale = 0.24]{NLAT}
-%	\end{frame}
-\section{Results}		
+
+
+
+
+\section{Results}
+    \begin{frame}
+        \frametitle{Results}
+        In this section, the results of the Nonlinear Observer
+        are presented in terms of committed error between the
+        true and estimated state.
+        %our experiments/simulations we assume
+        The transponder positions and the observer
+        tuning have been decided by
+        a \textit{trial and error} approach.
+    \end{frame}
+
+ \begin{frame}
+        \frametitle{Results}
+        The following picture shows the transponder positions
+        and the real trajectory to be estimated.
+        
+        \begin{columns}
+            \column{.4\textwidth}
+        Transponder positions $p_i^n$, $i=1,2,.. 6$
+        \begin{matrix}
+            p_1^n& =& [100;0;0.1] \\
+            p_2^n& =& [0;100;10] \\
+            p_3^n &=& [100;100;20] \\
+            p_4^n &=& [300;150;50] \\
+            p_5^n &=& [500;660;60] \\
+            p_6^n &=& [400;800;100]
+        \end{matrix}
+			\column{.6\textwidth}
+			\includegraphics[scale=0.15]{true_traj.jpg}
+		\end{columns}
+        
+    \end{frame}
+
+
+    
+    \begin{frame}
+        \frametitle{Pseudorange Model Design}
+        The Pseudorange Model has been implemented 
+        with positions obtained directly from the 
+        previously described equations,
+        without modelling the receiver on the vehicle that
+        receives signals from transponders
+    \end{frame}
+
+
+
+
+
 	\begin{frame}
 		\frametitle{Pseudorange Model Results}
-		% position and bias error
-		\begin{columns}[t]
-			\column{.5\textwidth}
+		\begin{itemize}
+		       \item Position and bias errors
+		\end{itemize}
+		\begin{columns}
+			\column{.3\textwidth}
+			%\begin{figure}
+			\includegraphics[scale= 0.1]{x_error.jpg}\\
+			%\caption{\small{X error.}}
+			%\end{figure}
+			%\begin{figure}
+			\includegraphics[scale=0.1]{y_error.jpg}
+			%\caption{\small{Y error.}}
+			%\end{figure}
+			\column{.3\textwidth}
 			\centering
-			\includegraphics[scale= 0.12]{x_error.jpg}\\
-			\includegraphics[scale= 0.12]{y_error.jpg}
-			\column{.5\textwidth}
-			\centering
-			\includegraphics[scale= 0.12]{z_error.jpg}\\
-			\includegraphics[scale= 0.12]{beta_error.jpg}
+			%\begin{figure}
+			\includegraphics[scale= 0.1]{z_error.jpg}\\
+			%\caption{\small{Z error.}}
+			%\end{figure}
+			%\begin{figure}
+			\includegraphics[scale= 0.1]{beta_error.jpg}
+			%\caption{\small{$\beta$ error.}}
+			%\end{figure}
 		\end{columns}
 	\end{frame}
 
@@ -434,6 +491,9 @@
 
 	\begin{frame}
 		\frametitle{$AO$ Results}
+		\begin{itemize}
+		       \item Angles errors
+		\end{itemize}
 		% angles error and norm of Rnb
 		\begin{columns}[t]
 			\column{.5\textwidth}
@@ -451,35 +511,53 @@
 
 	\begin{frame}
 		\frametitle{$AO$ Results}
+		
 		\begin{figure}[H]
 			\includegraphics[scale=0.4]{norm_rot}
 		\end{figure}
 		
 	\end{frame}
 
-%	\begin{frame}
-	%	The following picture shows the Simulink scheme:
-	%	\frametitle{Attitude Observer Implementation}
-	%	\includegraphics[scale=0.24]{at}
-%	\end{frame}
 
-	%\begin{frame}
-	%	\frametitle{Translational Motion Observer Design}
-	%	The $TMO$ is made of three blocks:\\
+    \begin{frame}
+		\frametitle{$TMO$ Results}
+		Despite of the non-estimation of $AO$,
+		the $TMO$ provides a good position estimation
+		only for a
+		simulation time of about 50s.
 		
-	%	\begin{itemize}
-	%		\item The first one solves the $Riccati$ $Equation$ to get the gain matrix $K$;
-			
-	%		\item The $TMO\_fuction$ computes the estimate of position, velocity, acceleration and bias;
-			
-		%	\item The last block computes the error dynamics.
-	%	\end{itemize}
-%	\end{frame}
-	
-%	\begin{frame}
-	%	\frametitle{Translational Motion Observer Design}
-	%	\includegraphics[scale = 0.25]{TMO}
-%	\end{frame}
+		\[ \dot{\hat{p}}^n_\Delta = \hat{v}^n + K_{pp}(\delta - \hat{\delta})  \]
+		
+		
+		At the beginning, the weighted injection term 
+		$K_{pp}(\delta - \hat{\delta})$ prevails on 
+		$\hat{v}^n$. Then $\hat{v}^n$ prevails and brings
+		a bad estimation due to the fact that depends on
+		$AO$.
+		
+	\end{frame}
+
+
+   \begin{frame}
+		\frametitle{$TMO$ Results}
+		\begin{itemize}
+		    \item This situation is shown in the following figures.
+	    \end{itemize}
+		\begin{columns}[t]
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.2]{x_div}\\
+			\includegraphics[scale=0.2]{y_div}
+			\column{.5\textwidth}
+			\centering
+			\includegraphics[scale=0.2]{z_div.jpg}\\
+			\includegraphics[scale=0.2]{beta_div.jpg}
+		\end{columns}
+		
+	\end{frame}
+
+
+
 	
 	\begin{frame}
 	\frametitle{$TMO$ Results}
@@ -614,5 +692,19 @@
 			\includegraphics[scale=0.25]{kric2}\\
 		\end{columns}
 	\end{frame}
+	
+	\section{Conclusions}
+		\begin{frame}
+		\frametitle{Conclusions}
+		This presentation has shown the results
+		obtained by studying and implementation
+		of a Nonlinear Observer for Tightly Coupled Integration
+		of Pseudorange and Inertial Measurements
+		designed by T.A. Johansen and T.I. Fossen.
+		%The results show that the estimation error converges 
+		%for a simulation time of about 50s.
+		%After that the
+		
+		\end{frame}
 
 \end{document}
