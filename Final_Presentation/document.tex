@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_US
 \documentclass{beamer}
 \label{key}\usetheme{Singapore}
 \usepackage{dsfont}
@@ -380,10 +381,12 @@
 		\frametitle{Data Generation}
 		\begin{itemize}
 			\item The real position of the vehicle is given from $X_e(m)$;
-			\item The range measurements always by $X_e(m)$ but corrupted by noise;
-			\item Specific forces from $A_b(m/s^2)$;
-			\item Angular velocities from $\omega_b(rad/s)$.
+			\item The range measurements always by $X_e(m)$, sampled at 0.1$Hz$ and corrupted by noise;
+			\item Specific forces from $A_b(m/s^2)$, sampled at 0.01$Hz$;
+			\item Angular velocities from $\omega_b(rad/s)$, sampled at 0.01$Hz$.
 		\end{itemize}
+		
+		The range measurements and $IMU$ data have been generated with two different simulink model (\textit{generator\_of\_pseudo\_measures.slx}, \textit{generator\_of\_imu.slx}),because of the system complexity and the non-possibility to incorporate everything in one model.
 	\end{frame}
 
 	\begin{frame}
@@ -417,7 +420,8 @@
         
         \begin{columns}
             \column{.4\textwidth}
-        Transponder positions $p_i^n$, $i=1,2,.. 6$
+        Transponder positions $p_i^n$, $i=1,2,.. 6$.
+        $$
         \begin{matrix}
             p_1^n& =& [100;0;0.1] \\
             p_2^n& =& [0;100;10] \\
@@ -426,6 +430,7 @@
             p_5^n &=& [500;660;60] \\
             p_6^n &=& [400;800;100]
         \end{matrix}
+        $$
 			\column{.6\textwidth}
 			\includegraphics[scale=0.15]{true_traj.jpg}
 		\end{columns}
@@ -696,15 +701,25 @@
 	\section{Conclusions}
 		\begin{frame}
 		\frametitle{Conclusions}
-		This presentation has shown the results
-		obtained by studying and implementation
-		of a Nonlinear Observer for Tightly Coupled Integration
-		of Pseudorange and Inertial Measurements
-		designed by T.A. Johansen and T.I. Fossen.
-		%The results show that the estimation error converges 
-		%for a simulation time of about 50s.
-		%After that the
+		This presentation has shown the results obtained by studying and implementation
+		of a Nonlinear Observer for Tightly Coupled Integration of Pseudorange and Inertial Measurements
+		designed by T.A. Johansen and T.I. Fossen.\\
 		
+		Since the model does not work as well as described in the article, we texted the authors. Dr. Fossen told us that there are some tricks for the implementation of Nonlinear Observers and to refer to the article:
+		\begin{itemize}
+			\item \textbf{Bryne, T. H., J.M. Hansen, R.H. Rogne, N. Sokolova, T. A. Johansen and T. I. Fossen. } Nonlinear Observers for Integrated INS/GNSS Navigation - Implementation Aspects. \textit{IEEE Control Systems Magazine}, Volume: 37, Issue 3, June 2017, pp. 59-86.
+		\end{itemize} 
 		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Conclusions}
+			However the utilized approach is different respect to the ours, so it was not very useful.\\
+			\vspace{0.3cm}
+			In order to achieve better performance in terms of state estimation, we tried to modify the gain matrix $K$ (computed by $Riccati$ equation) with a pure gain, but it did not work since the only result has been a delayed error divergence.			
+		\end{frame}
+		
+		
+		
+		
 
 \end{document}
