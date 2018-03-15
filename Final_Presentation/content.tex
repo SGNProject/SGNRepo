@@ -1,0 +1,27 @@
+\documentclass[12pt, a4paper]{article}
+
+
+\begin{document}
+	\textbf{\huge{Content}}\\
+	
+	The following list shows a brief description of all files.
+	
+	\begin{itemize}
+		\item \textbf{continuos\_model.slx}: simulink model.
+		\item \textbf{cproj.m}: Function used by \textit{Proj.m}.
+		\item \textbf{generator\_of\_imu.slx}: Computes \textit{specific forces} and \textit{angular velocities} data and loads them in \textit{MYACC.mat} and \textit{MYGYRO.mat}.
+		\item \textbf{generator\_of\_pseudorange.slx}: Computes the trajectory, in $NED$ frame, and loads it in \textit{MYNAV.mat}.
+		\item \textbf{MYACC.mat}: Contains \textit{specific forces} formatted data.
+		\item \textbf{MYGYRO.mat}: Contains \textit{angular velocities} formatted data. 
+		\item \textbf{MYNAV.mat}: Contains \textit{positions} formatted data.
+		\item \textbf{pa.m}: Computes the $skew-symmetric$ $part$ of a matrix.
+		\item \textbf{Proj.m}: Parameter projection which ensures that $\|\hat{b}\|_2 \leq M_{\hat{b}}$.
+		\item \textbf{sat.m}: Element wise saturation.
+		\item \textbf{skew.m}: Computes the $skew-symmetric$ matrix.
+		\item \textbf{vexfunc.m}: Computes $vex(S(x)) = x$.
+	\end{itemize}
+	
+	
+	
+	
+\end{document}
