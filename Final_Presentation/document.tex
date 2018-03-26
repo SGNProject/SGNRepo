@@ -390,20 +390,6 @@
 	\end{frame}
 
 	\begin{frame}
-			\frametitle{Data Generation}
-			Pseudo Measures generation \\
-			\vspace{0.3cm}
-			\includegraphics[scale=0.24]{generator_of_pseudo_measures}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Data Generation}
-		IMU generation \\
-		\vspace{0.3cm}
-		\includegraphics[scale=0.24]{generator_of_imu}
-	\end{frame}
-		
-	\begin{frame}
 		\frametitle{Simulink Model}
 	
 		\begin{figure}[H]
@@ -411,30 +397,42 @@
 		\end{figure}
 	\end{frame}
 
-
-
-
-
-\section{Results}
     \begin{frame}
-        \frametitle{Results}
+        \frametitle{Implementation}
         In this section, the results of the Nonlinear Observer
         are presented in terms of committed error between the
-        true and estimated state.
+        true and estimated state.\\
         %our experiments/simulations we assume
-        The transponder positions and the observer
-        tuning have been decided by
-        a \textit{trial and error} approach.
+		The transponder positions and the observers tuning have been decided by a \textit{trial and error} approach.
+    \end{frame}
+    
+    \begin{frame}
+    	\frametitle{Implementation}
+    	It has to be noted that the adopted system configuration works, generally speaking, only for simple trajectories as the one displayed in the following. The ability to estimate the trajectory does not depend only by transponders position and observers tuning, but by trajectory complexity too.
+    \end{frame}
+    
+    \begin{frame}
+	    \frametitle{Implementation}
+	     The choice of where to place the transponders is of great importance in order to estimate the vehicle position since it does effect the properties of the $output$ $matrix$ $C$.\\
+	    
+	    In particular is was observed that the transponders:
+	    \begin{itemize}
+	    	\item do not have to be set along the perimeter of the interested area of navigation;
+	    	\item do not have to be set too far from the vehicle.	    	
+	    \end{itemize}
+	        In these cases, $TMO$ results unstable in terms of estimation convergence. 
     \end{frame}
 
+
  \begin{frame}
-        \frametitle{Results}
-        The following picture shows the transponder positions
-        and the real trajectory to be estimated.
+        \frametitle{Implementation}
+%        The following picture shows the transponder positions
+%        and the real trajectory to be estimated.
+		A good arrangement (this one is not unique) is to set four transponders around the beginning of the trajectory and two quite far to cover the interested area of navigation.\\
         
         \begin{columns}
             \column{.4\textwidth}
-        Transponder positions $p_i^n$, $i=1,2,.. 6$.
+        Transponders positions $p_i^n$, $i=1,2,.. 6$.
         $$
         \begin{matrix}
             p_1^n& =& [100;0;0.1] \\
@@ -448,21 +446,17 @@
 			\column{.6\textwidth}
 			\includegraphics[scale=0.15]{true_traj.jpg}
 		\end{columns}
-        
     \end{frame}
-
-
     
-    \begin{frame}
-        \frametitle{Pseudorange Model Design}
-        The Pseudorange Model has been implemented 
-        with positions obtained directly from the 
-        previously described equations,
-        without modelling the receiver on the vehicle that
-        receives signals from transponders
-    \end{frame}
-
-
+      \begin{frame}
+        	\frametitle{Implementation}
+        	The Pseudorange Model has been implemented with positions obtained directly from the previously described equations, without modeling the receiver on the vehicle that receives signals from transponders.\\
+        	We thought that reproducing the equations describing the $Pseudorange$ $Model$ would have been enough for our goals (i.e. to reproduce the article results). Since long time passed and the transmitter/receiver model is quite complex to implement in Matlab/Simulink, that has not been achieved.  
+      \end{frame}
+    
+    
+\section{Results}
+    
 
 
 
@@ -474,7 +468,7 @@
 		\begin{columns}
 			\column{.3\textwidth}
 			%\begin{figure}
-			\includegraphics[scale= 0.1]{x_error.jpg}\\
+			\includegraphics[scale=0.1]{x_error.jpg}\\
 			%\caption{\small{X error.}}
 			%\end{figure}
 			%\begin{figure}
@@ -484,14 +478,21 @@
 			\column{.3\textwidth}
 			\centering
 			%\begin{figure}
-			\includegraphics[scale= 0.1]{z_error.jpg}\\
+			\includegraphics[scale=0.1]{z_error.jpg}\\
 			%\caption{\small{Z error.}}
 			%\end{figure}
 			%\begin{figure}
-			\includegraphics[scale= 0.1]{beta_error.jpg}
+			\includegraphics[scale=0.1]{beta_error.jpg}
 			%\caption{\small{$\beta$ error.}}
 			%\end{figure}
 		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pseudorange Model Results}
+		The graphs do not show a transitory, as we expected, and a constant estimation error around $10^{-4}m$. \\
+		\vspace{0.3cm}
+		Despite we looked for similar articles, written by the same authors, in order to find better explanations to why this model does not work properly, we concluded that this can be due to the fact that the model of transmitter/receiver has not been implemented.
 	\end{frame}
 
 		
@@ -507,6 +508,11 @@
 	%		\item $Rot\_func$ computes an estimation of the rotation matrix $R_b^n$.
 	%	\end{itemize}
 %	\end{frame}
+
+	\begin{frame}
+		\frametitle{$AO$ Results}
+		Despite the authors do not show the results obtained by the $Attitude$ $Observer$, we reputed it necessary to better understand the system results and for completeness.
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{$AO$ Results}
@@ -527,12 +533,30 @@
 		\end{columns}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{$AO$ Results}
+		We do not have a clear explanation to that. Three parameters can be tuned:
+		\begin{itemize}
+			\item $\sigma \geq 1$ 
+			\item $K_p > 0$
+			\item $k_i < 10^{-2}$
+		\end{itemize}
+		Different combinations of these parameters have been tried, respecting the relative constraints, but no improvement has been achieved.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{$AO$ Results}
+		We tried to isolate the $AO$ block in Simulink to achieve a good tuning: the $TMO$ feedback ($\hat{f}^n$) was canceled and replaced with $\hat{R}^n_b f^b_{IMU}$. \\
+		\vspace{0.3cm}
+		However no tuning configuration, that lets a good angles estimation, has been obtained.
+	\end{frame}
+	
 
 	\begin{frame}
 		\frametitle{$AO$ Results}
-		
+		A good result for the $AO$ is that the estimated rotation matrix $\hat{R}^n_b$ convergences to a rotation matrix since its norm tends to 1.
 		\begin{figure}[H]
-			\includegraphics[scale=0.4]{norm_rot}
+			\includegraphics[scale=0.3]{norm_rot}
 		\end{figure}
 		
 	\end{frame}
@@ -575,7 +599,10 @@
 		
 	\end{frame}
 
-
+	\begin{frame}
+		\frametitle{$TMO$ Results}
+		The following figures show the error committed by the $TMO$ in different initial error cases, with a simulation time of about $40s$.
+	\end{frame}
 
 	
 	\begin{frame}
@@ -601,7 +628,6 @@
 	\begin{frame}
 		\frametitle{$TMO$ Results}
 			% position and beta error
-			% no initial error
 			\begin{itemize}
 				\item Initial error [40;30;0;100].
 			\end{itemize}
@@ -689,7 +715,7 @@
 	%		Confronto tra gli osservatori
 	%\end{frame}
 	
-\section{Problems}
+\section{Other Problems}
 \subsection{Unbounded Covariance matrix $P$}
 	\begin{frame}
 		\frametitle{Unbounded $P$}
@@ -697,6 +723,12 @@
 		\begin{figure}[H]
 			\includegraphics[scale=0.3]{pric}
 		\end{figure} 
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Unbounded $P$}
+		An other aspect to consider is that the Matlab command \textbf{care} is not able to solve the Algebraic Riccati Equation since the Hamiltonian $H$ has poles on the imaginary axis.\\ A different transponders organization do not chang this aspect.
+		That makes thinking more to a problem of implementation, so to no-well-posedness.
 	\end{frame}
 
 	\begin{frame}
@@ -712,6 +744,25 @@
 		\end{columns}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Bounded $K$}
+		This is permitted since the divergent elements of the matrix $P$ are multiplied for $0$ during the computation of $K$. However no convergence is achieved.\\
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Constant $K$}
+		The possibility to have a very time varying system could have been an explanation to why the matrix $P$ is unbounded. Therefore, different constant gain matrices $K$ has been tried. The idea was to take $K$ at different steps during a simulation, then to run more simulations with a fixed $K$ to check the results of the $Observers$. However this way did not give better results in terms of position and angles estimation.
+	\end{frame}
+	
+\subsection{Simulator}
+	\begin{frame}
+		\frametitle{Simulator}
+		Simulink is not able to run simulations with a \textit{fixed-step} solver, even if with very little step-size (like $10^{-15}$).\\
+		Only the \textit{variable-step} solver \textbf{Ode-15} can run simulations. However, also in this case singularities in some parts of the systems (especially in \textit{integrators} blocks) occurred.
+		That makes us thinking again about a no-well-posedness system.
+		
+	\end{frame}
+	
 	\section{Conclusions}
 		\begin{frame}
 		\frametitle{Conclusions}
@@ -719,7 +770,7 @@
 		of a Nonlinear Observer for Tightly Coupled Integration of Pseudorange and Inertial Measurements
 		designed by T.A. Johansen and T.I. Fossen.\\
 		
-		Since the model does not work as well as described in the article, we texted the authors. Dr. Fossen told us that there are some tricks for the implementation of Nonlinear Observers and to refer to the article:
+		Since the model does not work as well as described in the article, we texted the authors. Dr. Fossen told us that there are some \textit{tricks} for the implementation of Nonlinear Observers and to refer to the article:
 		\begin{itemize}
 			\item \textbf{Bryne, T. H., J.M. Hansen, R.H. Rogne, N. Sokolova, T. A. Johansen and T. I. Fossen. } Nonlinear Observers for Integrated INS/GNSS Navigation - Implementation Aspects. \textit{IEEE Control Systems Magazine}, Volume: 37, Issue 3, June 2017, pp. 59-86.
 		\end{itemize} 
@@ -727,13 +778,15 @@
 		
 		\begin{frame}
 			\frametitle{Conclusions}
-			However the utilized approach is different respect to the ours, so it was not very useful.\\
-			\vspace{0.3cm}
-			In order to achieve better performance in terms of state estimation, we tried to modify the gain matrix $K$ (computed by $Riccati$ equation) with a pure gain, but it did not work since the only result has been a delayed error divergence.			
+			The suggested article helped us to better understand some aspects of the system, but did not us find explanations for the already cited problems. The system implementation is quite different in some aspects, like the system matrices and the computation of Riccati gain.\\ The main difference is that their last article has been implemented in a discrete form, while ours in a continuous one. But this last one should not provide different behaviors.
 		\end{frame}
 		
-		
-		
-		
-
+		\begin{frame}
+			\frametitle{Conclusions}
+			The cited \textit{"tricks"} by Fossen have not been explained by the author and not found out during the studying of the suggested article.\\
+			\vspace{0.3cm}
+			Again, we remark that the transmitter/receiver model has not been implemented that can effect the obtained results.\\
+			\vspace{0.3cm}
+			Our main conclusion is that, in absence of more information, the system is no-well-posedness.
+		\end{frame}
 \end{document}
